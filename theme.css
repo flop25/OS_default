@@ -1,0 +1,632 @@
+
+BODY {
+  margin: 0px;
+  padding: 0;
+  font-size: 0.8em;
+  font-family:  Univers, Helvetica, Optima, "Bitstream Vera Sans", sans-serif;
+  text-align: center; /* be nice to IE5 */
+}
+body div.content {
+  margin-left: 20em !important;
+	margin-bottom: 1em !important;
+	margin-right: 1em !important;
+}
+#the_page {
+	height:100%;
+	margin: 0px;
+}
+
+H1 {
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 0;
+  margin: 0.5em 0 1em 0;
+}
+
+H2 {
+	margin: 0;
+	padding: 5px 0.5em 5px 0.5em;
+	text-align: left;
+	font-size: 120%;
+}
+
+A {
+	text-decoration:none;
+	border-bottom: 1px dotted #000;
+}
+A:hover {
+	border-bottom: 1px solid #fff;
+}
+A.button, A.button:hover { 
+	border: 0; 
+}
+IMG {
+	border:none;
+}
+.illustration A, .titre_acordeon A, .titre_acordeon_0 A{
+	border-bottom:none;
+}
+
+HR.separation {
+  visibility: hidden;
+  clear: both;
+}
+
+#copyright {
+    clear: both;
+    font-size: 83%;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+/** General defaults **/
+INPUT, SELECT {
+  margin: 0;
+  font-size: 1em;	/* <= some browsers don't set it correctly */
+}
+UL, DL, LI { text-align: left;}
+TABLE {			/* horizontaly centered */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* for debugging purpose */
+PRE { text-align:left; }
+
+/** forms **/
+
+FORM { padding: 0em; }
+
+FORM P {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+FORM FIELDSET P {
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+
+.small {
+	font-size: 80%;
+}
+
+TEXTAREA.description {
+  height: 6em;
+  width: 40em;
+  overflow: auto;
+}
+
+SELECT.categoryList {
+  height: 20em;
+  width: auto;
+}
+
+DIV.comment BLOCKQUOTE {
+  padding: 0.5em;
+  overflow: auto;	/* no solution for IE6 */
+  min-height: 2.75em;	/* fix a Gecko bug whith scrollbar and 1 line only */
+}
+
+
+/**
+ * Filter forms are displayed label by label with the input (or select...)
+ * below the label. Use an UL to make a group (radiobox for instance).
+ * Use a SPAN to group objects in line
+ */
+FIELDSET {
+  padding: 1em;
+  margin: 1em;
+  overflow: hidden; /* <- makes Opera happy */
+}
+
+FORM.filter FIELDSET UL {
+  margin: 0;
+}
+FORM.filter FIELDSET UL,
+FORM.filter FIELDSET LABEL {
+  display: block;
+  float: left;
+  margin-right: 1em;
+  padding: 0;
+}
+
+FORM.filter FIELDSET LI {
+  list-style: none;
+  margin-bottom: 0.5em;
+}
+
+FORM.filter FIELDSET LI LABEL {
+  display: inline;
+  float: none;
+}
+
+FORM.filter FIELDSET UL.tagSelection LABEL {
+  display: inline;
+  float: none;
+  margin-right:0.5em;/*reduce from above*/
+}
+
+/* cannot use FIELDSET>LABEL because of IE<=6 */
+FORM.filter FIELDSET LABEL INPUT,
+FORM.filter FIELDSET LABEL SELECT,
+FORM.filter FIELDSET LABEL SPAN,
+FORM.filter FIELDSET LABEL TEXTAREA {
+  display: block;
+  margin: 0.5em 0;
+}
+FORM.filter FIELDSET * LABEL INPUT,
+FORM.filter FIELDSET * LABEL SELECT,
+FORM.filter FIELDSET * LABEL TEXTAREA,
+FORM.filter FIELDSET LABEL SPAN INPUT,
+FORM.filter FIELDSET LABEL SPAN SELECT,
+FORM.filter FIELDSET LABEL SPAN TEXTAREA {
+  display: inline;
+  vertical-align: top;
+  margin: 0 0.5em 0 0;
+}
+
+FORM.filter FIELDSET UL.tagSelection LI LABEL INPUT {
+  margin-right:0;
+}
+
+/* following declaration is important to avoid strange FF behaviour */
+FORM.filter FIELDSET LABEL SPAN SELECT {
+  margin: 0;
+}
+
+FORM.filter FIELDSET P
+{
+  clear: left;
+  display: block;
+}
+
+FORM.filter INPUT[type="submit"] {
+  margin-top: 1em;
+}
+
+FORM.properties UL, FORM#update UL {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+FORM.properties LI, FORM#update UL  {
+  margin-bottom: 0.5em;
+  padding: 0;
+  line-height: 1.8em;
+  clear: left;
+}
+
+FORM.properties SPAN.property {
+  font-weight: bold;
+  float: left;
+  width: 50%;
+  text-align: right;
+  margin: 0;
+  padding: 0 0.5em 0 0;
+}
+
+#theHeader H1 {
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	margin: 0px;
+}
+
+/* button tools */
+UL.actions {
+  text-indent: 0;
+  list-style: none;
+}
+UL.actions  LI {
+  display: inline;
+}
+UL.actions  A {
+  border: none;
+}
+
+UL.tagSelection {
+  width: 99%;
+  margin: 1em 0 1em 0;
+  padding: 0;
+}
+
+UL.tagSelection LI {
+  display: inline;
+  white-space: nowrap;
+}
+
+#fullTagCloud {
+  font-size: 120%;
+  text-align: justify;
+  padding: 0;
+  margin: 1em 2em 1em 2em;
+}
+
+#fullTagCloud SPAN {
+	white-space: nowrap;
+	margin: 0 2px;
+}
+
+.tagLevel5 { font-size: 150%; }
+.tagLevel4 { font-size: 140%; }
+.tagLevel3 { font-size: 120%; }
+.tagLevel2 { font-size: 100%; }
+.tagLevel1 { font-size: 90%; }
+
+
+/* Popup help page */
+BODY#thePopuphelpPage #copyright {
+  display: none;
+}
+#theNotificationPage p { padding: 0.5em; }
+
+BODY#thePopuphelpPage .content P {
+  text-align: justify;
+  padding: 0.5em;
+}
+
+BODY#thePopuphelpPage .content OL LI,
+BODY#thePopuphelpPage .content UL LI
+{
+  margin-bottom: 0.5em;
+}
+
+BODY#thePopuphelpPage P#pageBottomActions A {
+  border: none;
+}
+
+TR.tagLine {
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+TR.tagLine:hover {
+  background-color: #fff;
+}
+TD.nbEntries {
+  text-align: right;
+  font-style: italic;
+  font-size: 90%;
+}
+
+FIELDSET.tagLetter {
+  border: 1px solid #d3d3d3;
+  width: 200px;
+  margin: 0.5em;
+  padding: 10px;
+}
+
+LEGEND.tagLetterLegend {
+  border: 1px solid #d3d3d3;
+  font-size:120%;
+  font-weight: bold;
+  padding: 0 5px;
+  font-style: normal;
+}
+
+TABLE.tagLetterContent {
+  width:100%;
+  font-size:80%;
+  border-collapse : collapse;
+}
+
+#theNotificationPage DL,
+#thePopuphelpPage DL { margin: 0 25px 25px; }
+.content #comments UL.thumbnailCategories LI { width:99%; }
+/* jQuery datepicker */
+IMG.ui-datepicker-trigger {
+	cursor : pointer;
+}
+
+/*--------menu--------------*/
+#table_content, #table_menu {
+width:100%;
+height:100%;
+border:0;
+padding:0;
+margin:0;
+}
+#theHeader {
+	margin: 0px;
+	padding: 0px;
+	height:100px;
+}
+#menubar .button_res {
+	margin: 0 2px;
+	width: auto;
+	padding: 0;
+	text-indent: 0;
+	list-style: none;
+	text-align: center;
+	float: left;
+}
+.mb_left, .mb_right {
+	width:0px;
+}
+#theNotificationPage #menubar dl {
+	margin:0;
+}
+/* menu en haut */
+#div_Menu
+{
+	padding: 0px;
+	clear:both;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	height:25px;
+}
+
+ul#Menu
+{
+	height:22px;
+	margin: 0;
+	list-style-type: none;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 8px;
+}
+ul#Menu li
+{
+	float: left;
+	text-align: center;
+	display: block;
+	margin:0 10px;
+	height:22px;
+}
+ul#Menu li a
+{
+	width: auto;
+	line-height: 30px;
+	font-size: 1em;
+	text-decoration: none;
+}
+
+input#qsearchInput {
+width: 150px;
+text-align:left;
+}
+
+
+/**
+ * Informations box in administration
+ */
+.infos {
+  text-align: left;
+  color: #002000;
+  background-color: #98fb98; /* palegreen */
+  background-image: url(icon/admin/infos.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  margin: 0px;
+  padding: 10px 50px 10px 10px;
+}
+
+/**
+ * Header message like upgrade or adviser mode
+ */
+.header_msgs {
+  text-align:center;
+  font-weight: bold;
+  color:#696969;	/* dimgray */
+  background-color: #d3d3d3;
+  margin: 1px;
+  padding: 1px;
+	float:right;
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	width:20%;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 30px;
+}
+
+/**
+ * Header notes box in public/administration
+ */
+.header_notes {
+	border: 1px solid #aaaaaa; /* border color and style */
+	text-align: center;
+	background-image: url(icon/note.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	font-weight: bold;
+	margin: 14px;
+	float:right;
+	color:#000000;
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	width:20%;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 30px;
+}
+
+/* form picture.css */
+#imageHeaderBar {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	overflow: hidden;
+	width: 100%;
+		margin-top:0px;
+
+}
+
+#imageHeaderBar .browsePath {
+  float: left;
+  margin-left: 10px;
+}
+
+#imageHeaderBar .imageNumber {
+  float: right;
+  margin-right: 10px;
+}
+
+#imageHeaderBar H2 {
+  text-align: center;
+  padding: 0;
+  clear: both;
+}
+
+#imageToolBar {
+  text-align: center;
+  position: relative;
+  clear: both;
+  margin-bottom: 4px;
+  padding: 0;
+}
+
+#imageToolBar {
+    height: 50px;
+}
+#imageToolBar A, #imageToolBar IMG {
+    display: inline;
+    margin: 0; padding: 0;
+}
+#imageToolBar A {
+	margin-right: 3px;
+	margin-left: 5px;
+}
+#imageToolBar IMG { margin: 2px auto; }
+#imageToolBar .randomButtons A { float: left; }
+#imageToolBar .navButtons    A { float: right;  }
+
+
+
+#theImage {
+    clear: left;
+}
+
+#theImage>IMG {
+    display: block;
+    margin: 0 auto;
+}
+
+#theImage IMG {
+  border-width: 3px;
+  border-style: solid;
+}
+
+/**               les miniatures */
+.thumbLink {
+height:45px;
+width:auto;
+}
+.navThumb {
+    margin-top: 2px;
+}
+#thumbPrev {
+    float: right;
+	margin-right:0px;
+}
+
+#thumbNext {
+    float: right;
+	margin-left:0px;
+}
+#thumbCurrent {
+    float: right;
+	border:1px solid #FF0000;
+}
+#linkPrev {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+#linkNext {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+#action_pict {
+/*	float:left;
+	position: absolute;
+	left: 5px;
+	top: 300px;
+    width:150px;*/
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:0;
+}
+#action_pict A, #action_pict IMG{
+	border: none;
+	margin-right: 2px;
+	margin-left: 2px;	
+}
+
+TABLE.infoTable .value {
+    text-align: left;
+}
+
+TABLE.infoTable .label {
+    font-weight: bold;
+    text-align: right;
+    padding-right: 0.5em;
+}
+
+TABLE.infoTable TD.value UL {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+  list-style-type: square;
+}
+
+#rateForm {
+	display:block;
+	height:20px;
+	overflow:visible;
+}
+.rateButton, .rateButtonSelected, .rateButtonStarFull, .rateButtonStarEmpty  {
+  padding:0;
+  border:0;
+  height:16px;
+  width:16px;
+}
+
+.rateButton, .rateButtonStarFull, .rateButtonStarEmpty {
+  cursor: pointer;
+}
+
+.rateButtonSelected {
+  font-weight:bold;
+  font-size:120%;
+}
+
+.rateButtonStarFull {
+	background: url('icon/rating-stars.gif') no-repeat scroll; background-position:-16px center; width:16px;
+}
+
+.rateButtonStarEmpty {
+	background: url('icon/rating-stars.gif') no-repeat scroll; background-position:0 center; width:16px;
+}
+
+#comments {
+	text-align: left;
+	margin:20px 30px 2em;
+}
+
+#comments .comment {
+  margin: 1em 0;
+}
+
+#comments P {
+  margin: 0 0.5em 0 1em;
+}
+
+#comments .author {
+  font-weight: bold;
+}
+
+#thePicturePage #comments BLOCKQUOTE {
+  margin: 0.5em 1em 1em 4em;
+}
+
+#comments P.userCommentDelete {
+  float: right;
+  margin: 0 0.5em 0 0;
+}

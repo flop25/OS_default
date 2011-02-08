@@ -6,10 +6,14 @@ BODY {
   font-family:  Univers, Helvetica, Optima, "Bitstream Vera Sans", sans-serif;
   text-align: center; /* be nice to IE5 */
 }
-body div.content {
+body#theCommentsPage .content, body#theUploadPage .content, body#theRegisterPage .content, body#theIdentificationPage .content, body#theProfilePage .content, body#theSearchPage .content, body#theAboutPage .content, body#thePasswordPage .content, body#theNotificationPage .content, body#theTagsPage .content {
   margin-left: 20em !important;
 	margin-bottom: 1em !important;
 	margin-right: 1em !important;
+	margin-top:1.9em !important;
+}
+body#thePopuphelpPage #theHeader {
+	display:none;
 }
 #the_page {
 	height:100%;
@@ -75,7 +79,7 @@ PRE { text-align:left; }
 
 /** forms **/
 
-FORM { padding: 0em; }
+FORM { padding: 0em; margin-top: 5px; }
 
 FORM P {
 	text-align: center;
@@ -327,6 +331,7 @@ border:0;
 padding:0;
 margin:0;
 }
+
 #theHeader {
 	margin: 0px;
 	padding: 0px;
@@ -360,7 +365,7 @@ margin:0;
 
 ul#Menu
 {
-	height:22px;
+	height:25px;
 	margin: 0;
 	list-style-type: none;
 	padding-top: 0;
@@ -374,7 +379,7 @@ ul#Menu li
 	text-align: center;
 	display: block;
 	margin:0 10px;
-	height:22px;
+	height:25px;
 }
 ul#Menu li a
 {
@@ -382,6 +387,10 @@ ul#Menu li a
 	line-height: 30px;
 	font-size: 1em;
 	text-decoration: none;
+}
+#home_icon, #form_search_menu {
+	float:right !important;
+	margin-right:20px;
 }
 
 input#qsearchInput {
@@ -495,7 +504,7 @@ text-align:left;
 }
 #imageToolBar IMG { margin: 2px auto; }
 #imageToolBar .randomButtons A { float: left; }
-#imageToolBar .navButtons    A { float: right;  }
+#imageToolBar .navButtons    A { float: right; 	width:36px; }
 
 
 

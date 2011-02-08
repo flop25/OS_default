@@ -1,5 +1,10 @@
 
-<dt class="{$tab_identif}titre_acordeon"><a href="javascript:void(0);"><img src="{$ROOT_URL}{$themeconf.icon_dir}/menu/small_resizable.png" class="button_res" alt="[_]">{'Identification'|@translate}</a></dt>
+{if isset($tab_system) && $tab_system && in_array($id, $tab_closed)}
+<dt class="titre_acordeon">
+{else}
+<dt class="titre_acordeon_0">
+{/if}
+<a href="javascript:void(0);"><img src="{$ROOT_URL}{$themeconf.icon_dir}/menu/small_resizable.png" class="button_res" alt="[_]">{'Identification'|@translate}</a></dt>
 <dd>
 	{if isset($USERNAME)}
 	<p>{'Hello'|@translate}&nbsp;{$USERNAME}&nbsp;!</p>

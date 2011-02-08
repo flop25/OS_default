@@ -1,4 +1,12 @@
 <?php
+/*
+Theme Name: OS_default
+Version: 1.0.0
+Description: 
+Theme URI: http://fr.piwigo.org/ext/extension_view.php?eid=497
+Author: flop25
+Author URI: http://www.planete-flop.fr
+*/
 $themeconf = array(
   'name'         => 'OS_default',
   'parent'        => 'default',
@@ -6,6 +14,7 @@ $themeconf = array(
   'mime_icon_dir' => 'themes/OS_default/icon/mimetypes/',
   'local_head'    => 'local_head.tpl',
   'activable' => false,
+	'add_menu_on_public_pages'			=> true,	# activation
 	'Exclude'			=> array('theNBMPage','thePicturePage','thePopuphelpPage',),	# Excluded pages
 );
 // thx to Vdigital and his plugin spreadmenus
@@ -15,6 +24,7 @@ if ( !function_exists( 'add_menu_on_public_pages' ) ) {
 
 	function  add_menu_on_public_pages() {
 	  if ( function_exists( 'initialize_menu') ) return false; # The current page has already the menu 
+	  if ( !get_themeconf('add_menu_on_public_pages') ) return false; # The current page has already the menu 
 	  global $template, $page, $conf;
 	  if ( isset($page['body_id']) and in_array($page['body_id'], get_themeconf('Exclude')) ) return false;
 

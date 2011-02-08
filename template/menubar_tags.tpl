@@ -1,4 +1,9 @@
-dt class="{$tab_tag}titre_acordeon"><a href="javascript:void(0);"><img src="{$ROOT_URL}{$themeconf.icon_dir}/menu/small_resizable.png" class="button_res" alt="[_]">{'Related tags'|@translate}</a></dt><dd>
+{if isset($tab_system) && $tab_system && in_array($id, $tab_closed)}
+<dt class="titre_acordeon">
+{else}
+<dt class="titre_acordeon_0">
+{/if}
+<a href="javascript:void(0);"><img src="{$ROOT_URL}{$themeconf.icon_dir}/menu/small_resizable.png" class="button_res" alt="[_]">{'Related tags'|@translate}</a></dt><dd>
 	<div id="menuTagCloud">
 		{foreach from=$block->data item=tag}
 		<span>

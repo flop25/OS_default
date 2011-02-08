@@ -1,4 +1,5 @@
 {$MENUBAR}
+
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 <div id="content" class="content">
   <table id="table_content" border="0" cellspacing="0" cellpadding="0">
@@ -35,19 +36,19 @@
 		  {/if}
 	
 		  {if isset($U_MODE_FLAT) }
-		  <li><a href="{$U_MODE_FLAT}" title="{'mode_flat_hint'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/flat.png" class="button" alt="{'mode_flat_hint'|@translate}" /></a></li>
+		  <li><a href="{$U_MODE_FLAT}" title="{'display all elements in all sub-categories'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/flat.png" class="button" alt="{'display all elements in all sub-categories'|@translate}" /></a></li>
 		  {/if}
 	
 		  {if isset($U_MODE_NORMAL) }
-		  <li><a href="{$U_MODE_NORMAL}" title="{'mode_normal_hint'|@translate}"><img src="{$ROOT_URL}{$themeconf.icon_dir}/normal_mode.png" class="button" alt="{'mode_normal_hint'|@translate}" /></a></li>
+		  <li><a href="{$U_MODE_NORMAL}" title="{'return to normal view mode'|@translate}"><img src="{$ROOT_URL}{$themeconf.icon_dir}/normal_mode.png" class="button" alt="{'return to normal view mode'|@translate}" /></a></li>
 		  {/if}
 	
 		  {if isset($U_MODE_POSTED) }
-		  <li><a href="{$U_MODE_POSTED}" title="{'mode_posted_hint'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/calendar.png" class="button" alt="{'mode_posted_hint'|@translate}" /></a></li>
+		  <li><a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/calendar.png" class="button" alt="{'display a calendar by posted date'|@translate}" /></a></li>
 		  {/if}
 		  
 		  {if isset($U_MODE_CREATED) }
-		  <li><a href="{$U_MODE_CREATED}" title="{'mode_created_hint'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/calendar_created.png" class="button" alt="{'mode_created_hint'|@translate}" /></a></li>
+		  <li><a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/calendar_created.png" class="button" alt="{'display a calendar by creation date'|@translate}" /></a></li>
 		  {/if}
 		  
 		  {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}

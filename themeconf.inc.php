@@ -3,7 +3,7 @@
 Theme Name: OS_default
 Version: 1.0.0
 Description: 
-Theme URI: http://fr.piwigo.org/ext/extension_view.php?eid=497
+Theme URI: http://piwigo.org/ext/extension_view.php?eid=497
 Author: flop25
 Author URI: http://www.planete-flop.fr
 */

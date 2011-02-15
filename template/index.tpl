@@ -110,11 +110,7 @@
 		{if !empty($THUMBNAILS) }{$THUMBNAILS}{/if}
 		
 		
-		{if !empty($NAV_BAR) }
-		<div class="navigationBar">
-		  {$NAV_BAR}
-		</div>
-		{/if}
+		{if !empty($navbar) }{include file='navigation_bar.tpl'|@get_extent:'navbar'}{/if}
 		
 		{if !empty($CONTENT_DESCRIPTION) }
 		<div class="additional_info">

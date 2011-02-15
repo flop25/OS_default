@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: OS_default
-Version: 1.0.0
+Version: 1.0.1
 Description: 
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=497
 Author: flop25

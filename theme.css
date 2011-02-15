@@ -19,6 +19,9 @@ body#thePopuphelpPage #theHeader {
 	height:100%;
 	margin: 0px;
 }
+.thumbnailCategory .icon {
+    border: none;
+}
 
 H1 {
   text-align: center;

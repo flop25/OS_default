@@ -1,17 +1,15 @@
-{if isset($U_START_FILTER)} 
-	<a href="{$U_START_FILTER}" title="{'display only recently posted images'|@translate}" rel="nofollow">
-	<img src="{$ROOT_URL}{$themeconf.icon_dir}/start_filter.png" class="button" alt="start filter"></a>
-{/if}
-{if isset($U_STOP_FILTER)}
-	<a href="{$U_STOP_FILTER}" title="{'return to the display of all images'|@translate}">	
-	<img src="{$ROOT_URL}{$themeconf.icon_dir}/stop_filter.png" class="button" alt="stop filter"></a>
-{/if}
 {if isset($tab_system) && $tab_system && in_array($id, $tab_closed)}
 <dt class="titre_acordeon">
 {else}
 <dt class="titre_acordeon_0">
 {/if}
-	<a href="javascript:void(0);"><img src="{$ROOT_URL}{$themeconf.icon_dir}/menu/small_resizable.png" class="button_res" alt="[_]">{'Categories'|@translate}</a>
+  {if isset($U_START_FILTER)}
+  <a href="{$U_START_FILTER}" title="{'display only recently posted photos'|@translate}" rel="nofollow"><img src="{$ROOT_URL}{$themeconf.icon_dir}/start_filter.png" class="button" alt="start filter"></a>
+  {/if}
+  {if isset($U_STOP_FILTER)}
+  <a href="{$U_STOP_FILTER}" title="{'return to the display of all photos'|@translate}"><img src="{$ROOT_URL}{$themeconf.icon_dir}/stop_filter.png" class="button" alt="stop filter"></a>
+  {/if}
+	<a href="javascript:void(0);"><img src="{$ROOT_URL}{$themeconf.icon_dir}/menu/small_resizable.png" class="button_res" alt="[_]">{'Albums'|@translate}</a>
 </dt>
 <dd>
 {assign var='ref_level' value=0}
@@ -33,10 +31,6 @@
   {assign var='ref_level' value=$cat.LEVEL}
 {/foreach}
 {'</li></ul>'|@str_repeat:$ref_level}
-	{if isset($block->data.U_UPLOAD)}
-		<ul>
-			<li> <a href="{$block->data.U_UPLOAD}">{'Upload_picture'|@translate}</a> </li>
-		</ul>
-	{/if}
-	<p class="totalImages">{$pwg->l10n_dec('%d image', '%d images', $block->data.NB_PICTURE)}</p>
+
+	<p class="totalImages">{$pwg->l10n_dec('%d photo', '%d photos', $block->data.NB_PICTURE)}</p>
 </dd>

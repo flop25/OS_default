@@ -6,14 +6,14 @@
 		{/if}
     {/foreach}
       <li id="form_search_menu" >
-        {if isset($block->data.qsearch) and  $block->data.qsearch==true}
-    <form action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
-      <p style="margin:0;padding:0"{*this <p> is for html validation only - does not affect positioning*}>
-        <input type="text" name="q" id="qsearchInput" onfocus="if (value==qsearch_prompt) value='';" onblur="if (value=='') value=qsearch_prompt;" style="width:90%">
-      </p>
-    </form>
-    <script type="text/javascript">var qsearch_prompt="{'Quick search'|@translate|@escape:'javascript'}"; document.getElementById('qsearchInput').value=qsearch_prompt;</script>
-  {/if}
+    {if isset($block->data.qsearch) and  $block->data.qsearch==true}
+      <form action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
+        <p style="margin:0;padding:0"{*this <p> is for html validation only - does not affect positioning*}>
+          <input type="text" name="q" id="qsearchInput" onfocus="if (value==qsearch_prompt) value='';" onblur="if (value=='') value=qsearch_prompt;" style="width:90%">
+        </p>
+      </form>
+      <script type="text/javascript">var qsearch_prompt="{'Quick search'|@translate|@escape:'javascript'}"; document.getElementById('qsearchInput').value=qsearch_prompt;</script>
+    {/if}
 	</li>
       <li id="home_icon" ><a href="{$myblock->data.U_CATEGORIES}" title="{'return to homepage'|@translate}"><img src="{$themeconf.icon_dir}/home.png" class="button" alt="{'home'|@translate}"/></a></li>
 

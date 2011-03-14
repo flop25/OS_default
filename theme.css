@@ -524,7 +524,28 @@ text-align:left;
   border-width: 3px;
   border-style: solid;
 }
-
+#imageToolBar {
+    height: 60px;
+}
+#imageToolBar #thumbPrev, #imageToolBar #thumbNext {
+	margin-left:5px;
+	margin-right:5px;
+	display:inline;
+	width:auto;
+}
+#imageToolBar #thumbCurrent {
+	margin-left:5px;
+	margin-right:5px;
+	display:inline;
+	width:auto;
+}
+#imageToolBar #linkPrev, #imageToolBar #thumbCurrent, #imageToolBar #linkNext {
+	border:#FFF solid 2px;
+	width:auto;
+}
+.navButtons .pwg-state-disabled {
+	float: right;
+}
 /**               les miniatures */
 .thumbLink {
 height:45px;

@@ -68,6 +68,14 @@
         
         <h2>{$TITLE}</h2>
         
+            
+			</div>{* <!-- titrePage --> *}  
+	  </td>
+      <td id="section_up_right">&nbsp;</td>
+    </tr>
+    <tr>
+      <td id="section_left">&nbsp;</td>
+      <td id="section_in">
         {if isset($chronology_views)}
         <div class="calendarViews">{'View'|@translate}:
           <select onchange="document.location = this.options[this.selectedIndex].value;">
@@ -81,14 +89,6 @@
         {if isset($chronology.TITLE)}
         <h2>{$chronology.TITLE}</h2>
         {/if}
-            
-			</div>{* <!-- titrePage --> *}  
-	  </td>
-      <td id="section_up_right">&nbsp;</td>
-    </tr>
-    <tr>
-      <td id="section_left">&nbsp;</td>
-      <td id="section_in">
 
         {if !empty($PLUGIN_INDEX_CONTENT_BEGIN)}{$PLUGIN_INDEX_CONTENT_BEGIN}{/if}
         

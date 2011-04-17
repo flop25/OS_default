@@ -17,6 +17,7 @@ $themeconf = array(
 	'add_menu_on_public_pages'			=> true,	# activation
 	'Exclude'			=> array('theNBMPage','thePicturePage','thePopuphelpPage',),	# Excluded pages
 );
+/*********************************menu on every pages ************************************/
 // thx to Vdigital and his plugin spreadmenus
 if ( !function_exists( 'add_menu_on_public_pages' ) ) {
 	if ( defined('IN_ADMIN') and IN_ADMIN ) return false;
@@ -45,5 +46,51 @@ if ( !function_exists( 'add_menu_on_public_pages' ) ) {
 	  
 	}
 }
+/************************************ index.tpl ************************************/
+add_event_handler('loc_end_index', 'OS_default_index');
+function OS_default_index()
+{
+    global $template;
+    $template->set_prefilter('index', 'OS_default_prefilter_index');
+}
+function OS_default_prefilter_index($content, &$smarty)
+{
+  $search = '#<div id="content" class="content">#';  
+  $replacement = '<div id="content" class="content">
+  <table id="table_content" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td id="section_up_left">&nbsp;</td>
+      <td id="section_up">
+';
+  $content = preg_replace($search, $replacement, $content);
 
+  $search = '#</div>\{\* <\!-- titrePage --> \*\}#';  
+  $replacement = '';
+  $content = preg_replace($search, $replacement, $content);
+	
+  $search = '#<h2>\{\$TITLE\}</h2>#';  
+  $replacement = '<h2>{$TITLE}</h2>
+	</div>{* <!-- titrePage --> *}  
+	  </td>
+      <td id="section_up_right">&nbsp;</td>
+    </tr>
+    <tr>
+      <td id="section_left">&nbsp;</td>
+      <td id="section_in">';
+  $content = preg_replace($search, $replacement, $content);
+	
+  $search = '#\{if \!empty\(\$PLUGIN_INDEX_CONTENT_END\)\}\{\$PLUGIN_INDEX_CONTENT_END\}\{/if\}#';  
+  $replacement = '{if !empty($PLUGIN_INDEX_CONTENT_END)}{$PLUGIN_INDEX_CONTENT_END}{/if}
+      </td>
+	  <td id="section_right">&nbsp;</td>
+    </tr>
+    <tr>
+      <td id="section_bottom_left">&nbsp;</td>
+      <td id="section_bottom" >&nbsp;</td>
+      <td id="section_bottom_right" >&nbsp;</td>
+    </tr>
+  </table>
+';
+  return preg_replace($search, $replacement, $content);
+}
 ?>

@@ -74,6 +74,23 @@ HR.separation {
 	max-height:120px;
 }
 
+/* contenu "section" */
+.stuffs_block #section_up_left{
+	background-position:right top;
+	background-repeat:no-repeat;
+ height:20px;
+}
+.stuffs_block #section_up {
+ background-position:top;
+ background-repeat:repeat-x;
+ height:20px;
+}
+.stuffs_block #section_up_right{
+ background-position:left top;
+ background-repeat:no-repeat;
+ height:20px;
+}
+
 /** General defaults **/
 INPUT, SELECT {
   margin: 0;

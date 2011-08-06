@@ -594,11 +594,13 @@ width:auto;
 #linkPrev {
     margin-right: 10px;
     margin-left: 5px;
+	position: static;
 }
 
 #linkNext {
     margin-right: 5px;
     margin-left: 10px;
+	position: static;
 }
 #action_pict {
 /*	float:left;

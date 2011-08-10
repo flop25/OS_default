@@ -93,4 +93,21 @@ function OS_default_prefilter_index($content, &$smarty)
 ';
   return preg_replace($search, $replacement, $content);
 }
+
+/************************************ picture.tpl ************************************/
+add_event_handler('loc_begin_picture', 'OS_default_picture');
+function OS_default_picture()
+{
+    global $template;
+    $template->set_prefilter('picture', 'OS_default_prefilter_picture');
+}
+function OS_default_prefilter_picture($content, &$smarty)
+{
+  $search = '#<div id="imageInfos">.*<table id="standard" class="infoTable">#s';  
+  $replacement = '<table id="standard" class="infoTable">';
+  return preg_replace($search, $replacement, $content);
+}
+
+
+
 ?>

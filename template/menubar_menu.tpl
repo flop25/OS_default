@@ -15,7 +15,7 @@
       <script type="text/javascript">var qsearch_prompt="{'Quick search'|@translate|@escape:'javascript'}"; document.getElementById('qsearchInput').value=qsearch_prompt;</script>
     {/if}
 	</li>
-      <li id="home_icon" ><a href="{$myblock->data.U_CATEGORIES}" title="{'return to homepage'|@translate}"><img src="{$themeconf.icon_dir}/home.png" class="button" alt="{'home'|@translate}"/></a></li>
+      <li id="home_icon" ><a href="{$myblock->data.U_CATEGORIES}" title="{'Home'|@translate}"><img src="{$themeconf.icon_dir}/home.png" class="button" alt="{'Home'|@translate}"/></a></li>
 
 	</ul>
 </div>

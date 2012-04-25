@@ -20,13 +20,13 @@
 {/if}{/strip}
 {if isset($next) }
 <a class="navThumb" id="thumbNext" href="{$next.U_IMG}" title="{'Next'|@translate} : {$next.TITLE}" rel="next">
-  <img src="{$next.THUMB_SRC}" class="thumbLink" id="linkNext" alt="{$next.TITLE}">
+  <img src="{$next.derivatives.square->get_url()}" class="thumbLink" id="linkNext" alt="{$next.TITLE}">
 </a>
 {/if}
-	<img src="{$current.THUMB_SRC}" class="thumbLink" id="thumbCurrent" alt="{$ALT_IMG}">
+	<img src="{$current.derivatives.square->get_url()}" class="thumbLink" id="thumbCurrent" alt="{$ALT_IMG}">
 {if isset($previous) }
 <a class="navThumb" id="thumbPrev" href="{$previous.U_IMG}" title="{'Previous'|@translate} : {$previous.TITLE}" rel="prev">
-  <img src="{$previous.THUMB_SRC}" class="thumbLink" id="linkPrev" alt="{$previous.TITLE}">
+  <img src="{$previous.derivatives.square->get_url()}" class="thumbLink" id="linkPrev" alt="{$previous.TITLE}">
 </a>
 {/if}
 

@@ -46,6 +46,68 @@ if ( !function_exists( 'add_menu_on_public_pages' ) ) {
 	  
 	}
 }
+
+
+// function load_pattern
+// include the right ***.pattern.php
+// not compatible 2.2and<2.2
+
+function load_pattern()
+{
+  global $pattern;
+  $pwgversion=str_replace('.','',PHPWG_VERSION);
+  $pwgversion_array=explode('.', PHPWG_VERSION);
+  if (file_exists($pwgversion.'pattern.php'))
+  {
+    include($pwgversion.'.pattern.php');
+    return true;
+  }
+  elseif (file_exists(PHPWG_ROOT_PATH.'themes/OS_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php'))
+  {
+    include(PHPWG_ROOT_PATH.'themes/OS_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php');
+    return true;
+  }
+  else
+  {
+    $list_pattern_path=array();
+    $dir=PHPWG_ROOT_PATH.'themes/OS_default';
+    $dh = opendir($dir);
+    while (($file = readdir ($dh)) !== false ) {
+      if ($file !== '.' && $file !== '..') {
+        $path =$dir.'/'.$file;
+        if (!is_dir ($path)) { 
+          if(strpos($file,'pattern.php')!==false) { //On ne prend que les .pattern.php
+            $list_pattern_path[]=$file;
+          }
+        }
+      }
+    }
+    closedir($dh);
+    $f=0;
+    for($i = 10; $i >=0; $i--)
+    {
+      if (in_array($pwgversion_array[0].$i.'.pattern.php',$list_pattern_path))
+      {
+        include($pwgversion_array[0].$i.'.pattern.php');
+        return true;
+        $f=1;
+        break;
+      }
+    }
+    if ($f=0)
+    {
+      return false;
+    }
+  }
+  
+}
+if(!load_pattern())
+{
+  global $page;
+  $page['errors'][]='Theme not compatible';
+}
+
+
 /************************************ index.tpl ************************************/
 add_event_handler('loc_end_index', 'OS_default_index');
 function OS_default_index()
@@ -55,43 +117,14 @@ function OS_default_index()
 }
 function OS_default_prefilter_index($content, &$smarty)
 {
-  $search = '#<div id="content" class="content">#';  
-  $replacement = '<div id="content" class="content">
-  <table id="table_content" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td id="section_up_left">&nbsp;</td>
-      <td id="section_up">
-';
-  $content = preg_replace($search, $replacement, $content);
-
-  $search = '#</div>\{\* <\!-- titrePage --> \*\}#';  
-  $replacement = '';
-  $content = preg_replace($search, $replacement, $content);
-	
-  $search = '#<h2>\{\$TITLE\}</h2>#';  
-  $replacement = '<h2>{$TITLE}</h2>
-	</div>{* <!-- titrePage --> *}  
-	  </td>
-      <td id="section_up_right">&nbsp;</td>
-    </tr>
-    <tr>
-      <td id="section_left">&nbsp;</td>
-      <td id="section_in">';
-  $content = preg_replace($search, $replacement, $content);
-	
-  $search = '#\{if \!empty\(\$PLUGIN_INDEX_CONTENT_END\)\}\{\$PLUGIN_INDEX_CONTENT_END\}\{/if\}#';  
-  $replacement = '{if !empty($PLUGIN_INDEX_CONTENT_END)}{$PLUGIN_INDEX_CONTENT_END}{/if}
-      </td>
-	  <td id="section_right">&nbsp;</td>
-    </tr>
-    <tr>
-      <td id="section_bottom_left">&nbsp;</td>
-      <td id="section_bottom" >&nbsp;</td>
-      <td id="section_bottom_right" >&nbsp;</td>
-    </tr>
-  </table>
-';
-  return preg_replace($search, $replacement, $content);
+  global $pattern;
+  $r=$pattern['OS_default_prefilter_index']['R'];
+  $ps=$pattern['OS_default_prefilter_index']['S'];
+  foreach($r as $i => $pr)
+  {
+    $content = str_replace($ps[$i], $pr, $content);
+  }
+  return $content;
 }
 
 /************************************ picture.tpl ************************************/
@@ -103,11 +136,14 @@ function OS_default_picture()
 }
 function OS_default_prefilter_picture($content, &$smarty)
 {
-  $search = '#<div id="imageInfos">.*<table id="standard" class="infoTable">#s';  
-  $replacement = '<table id="standard" class="infoTable">';
-  return preg_replace($search, $replacement, $content);
+  global $pattern;
+  $r=$pattern['OS_default_prefilter_picture']['R'];
+  $ps=$pattern['OS_default_prefilter_picture']['S'];
+  foreach($r as $i => $pr)
+  {
+    $content = preg_replace($ps[$i], $pr, $content);
+  }
+  return $content;
 }
-
-
 
 ?>

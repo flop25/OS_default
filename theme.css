@@ -41,7 +41,6 @@ H2 {
 
 A {
 	text-decoration:none;
-	border-bottom: 1px dotted #000;
 }
 A:hover {
 	border-bottom: 1px solid #fff;
@@ -378,6 +377,15 @@ margin:0;
 }
 #theNotificationPage #menubar dl {
 	margin:0;
+}
+#menubar .button {
+    float: right;
+    list-style: none outside none;
+    margin: -2px 2px 2px;
+    padding: 0;
+    text-align: center;
+    text-indent: 0;
+    width: auto;
 }
 /* menu en haut */
 #div_Menu

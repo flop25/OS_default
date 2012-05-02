@@ -512,7 +512,6 @@ text-align:left;
 
 #imageToolBar {
   text-align: center;
-  position: relative;
   clear: both;
   margin-bottom: 4px;
   padding: 0;
@@ -554,12 +553,14 @@ text-align:left;
 #imageToolBar #thumbPrev, #imageToolBar #thumbNext {
 	margin-left:5px;
 	margin-right:5px;
+  margin-top:-20px;
 	display:inline;
 	width:auto;
 }
 #imageToolBar #thumbCurrent {
 	margin-left:5px;
 	margin-right:5px;
+  margin-top:-20px;
 	display:inline;
 	width:auto;
 }
@@ -572,7 +573,7 @@ text-align:left;
 }
 /**               les miniatures */
 .thumbLink {
-height:45px;
+height:70px;
 width:auto;
 }
 .navThumb {

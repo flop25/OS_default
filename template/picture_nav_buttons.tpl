@@ -20,13 +20,25 @@
 {/if}{/strip}
 {if isset($next) }
 <a class="navThumb" id="thumbNext" href="{$next.U_IMG}" title="{'Next'|@translate} : {$next.TITLE}" rel="next">
+  {if strpos('2.4',$PHPWG_VERSION)}
   <img src="{$next.derivatives.square->get_url()}" class="thumbLink" id="linkNext" alt="{$next.TITLE}">
+  {else}
+  <img src="{$next.THUMB_SRC}" class="thumbLink" id="linkNext" alt="{$next.TITLE}">
+  {/if}
 </a>
 {/if}
+  {if strpos('2.4',$PHPWG_VERSION)}
 	<img src="{$current.derivatives.square->get_url()}" class="thumbLink" id="thumbCurrent" alt="{$ALT_IMG}">
+  {else}
+	<img src="{$current.THUMB_SRC}" class="thumbLink" id="thumbCurrent" alt="{$ALT_IMG}">
+  {/if}
 {if isset($previous) }
 <a class="navThumb" id="thumbPrev" href="{$previous.U_IMG}" title="{'Previous'|@translate} : {$previous.TITLE}" rel="prev">
+  {if strpos('2.4',$PHPWG_VERSION)}
   <img src="{$previous.derivatives.square->get_url()}" class="thumbLink" id="linkPrev" alt="{$previous.TITLE}">
+  {else}
+  <img src="{$previous.THUMB_SRC}" class="thumbLink" id="linkPrev" alt="{$previous.TITLE}">
+  {/if}
 </a>
 {/if}
 

@@ -112,8 +112,8 @@ if(!load_pattern())
 add_event_handler('loc_end_index', 'OS_default_index');
 function OS_default_index()
 {
-    global $template;
-    $template->set_prefilter('index', 'OS_default_prefilter_index');
+  global $template;
+  $template->set_prefilter('index', 'OS_default_prefilter_index');
 }
 function OS_default_prefilter_index($content, &$smarty)
 {
@@ -131,8 +131,8 @@ function OS_default_prefilter_index($content, &$smarty)
 add_event_handler('loc_begin_picture', 'OS_default_picture');
 function OS_default_picture()
 {
-    global $template;
-    $template->set_prefilter('picture', 'OS_default_prefilter_picture');
+  global $template;
+  $template->set_prefilter('picture', 'OS_default_prefilter_picture');
 }
 function OS_default_prefilter_picture($content, &$smarty)
 {

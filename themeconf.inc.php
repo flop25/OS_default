@@ -73,15 +73,15 @@ function load_pattern()
     include($pwgversion.'.pattern.php');
     return true;
   }
-  elseif (file_exists(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php'))
+  elseif (file_exists(PHPWG_ROOT_PATH.'themes/OS_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php'))
   {
-    include(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php');
+    include(PHPWG_ROOT_PATH.'themes/OS_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php');
     return true;
   }
   else
   {
     $list_pattern_path=array();
-    $dir=PHPWG_ROOT_PATH.'themes/Pure_default';
+    $dir=PHPWG_ROOT_PATH.'themes/OS_default';
     $dh = opendir($dir);
     while (($file = readdir ($dh)) !== false ) {
       if ($file !== '.' && $file !== '..') {
@@ -152,8 +152,4 @@ function OS_default_prefilter_picture($content, &$smarty)
   }
   return $content;
 }
-<<<<<<< .mine
 ?>
-=======
-?> */
->>>>>>> .r21025

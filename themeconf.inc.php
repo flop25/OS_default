@@ -173,5 +173,4 @@ function OS_default_prefilter_picture($content, &$smarty)
   }
   return $content;
 }
-
 ?> */

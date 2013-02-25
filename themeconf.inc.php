@@ -73,15 +73,15 @@ function load_pattern()
     include($pwgversion.'.pattern.php');
     return true;
   }
-  elseif (file_exists(PHPWG_ROOT_PATH.'themes/OS_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php'))
+  elseif (file_exists(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php'))
   {
-    include(PHPWG_ROOT_PATH.'themes/OS_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php');
+    include(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php');
     return true;
   }
   else
   {
     $list_pattern_path=array();
-    $dir=PHPWG_ROOT_PATH.'themes/OS_default';
+    $dir=PHPWG_ROOT_PATH.'themes/Pure_default';
     $dh = opendir($dir);
     while (($file = readdir ($dh)) !== false ) {
       if ($file !== '.' && $file !== '..') {
@@ -117,27 +117,6 @@ if(!load_pattern())
   global $page;
   $page['errors'][]='Theme not compatible';
 }
-global $pattern;
-foreach ($pattern['OS_default'] as $array_pattern)
-{
-  $name_pref=create_function("$content,&$smarty","
-    global $pattern;
-    $r=\$pattern['".$array_pattern[2]."']['R'];
-    $ps=\$pattern['".$array_pattern[2]."']['S'];
-    foreach($r as $i => $pr)
-    {
-      $content = str_replace($ps[$i], $pr, $content);
-    }
-    return $content;
-  ");
-  $name_funct=create_function("","
-    global $template;
-    $template->set_prefilter(".$array_pattern[1].", ".$name_pref.");
-  ");
-  add_event_handler($array_pattern[0], $name_funct);
-
-}
-/*
 add_event_handler('loc_end_index', 'OS_default_index');
 function OS_default_index()
 {
@@ -173,4 +152,8 @@ function OS_default_prefilter_picture($content, &$smarty)
   }
   return $content;
 }
+<<<<<<< .mine
+?>
+=======
 ?> */
+>>>>>>> .r21025

@@ -546,10 +546,6 @@ text-align:left;
     clear: left;
 }
 
-#theImage>IMG {
-    display: block;
-    margin: 0 auto;
-}
 
 #theImage IMG {
   border-width: 3px;

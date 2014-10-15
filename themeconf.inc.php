@@ -16,18 +16,9 @@ $themeconf = array(
   'activable' => false,
 	'add_menu_on_public_pages'			=> true,	# activation
 	'Exclude'			=> array('theNBMPage','thePicturePage','thePopuphelpPage',),	# Excluded pages
+  'colorscheme' => 'clear',
 );
 
-
-
-add_event_handler('loc_begin_picture', 'pwg_v');
-function  pwg_v() {
-  global $template;
-  $template->assign(
-  array(
-    'PHPWG_VERSION' => PHPWG_VERSION,
-  ));
-}
 /*********************************menu on every pages ************************************/
 // thx to Vdigital and his plugin spreadmenus
 if ( !function_exists( 'add_menu_on_public_pages' ) ) {

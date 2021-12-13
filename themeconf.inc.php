@@ -114,7 +114,7 @@ function OS_default_index()
   global $template;
   $template->set_prefilter('index', 'OS_default_prefilter_index');
 }
-function OS_default_prefilter_index($content, &$smarty)
+function OS_default_prefilter_index($content)
 {
   global $pattern;
   $r=$pattern['OS_default_prefilter_index']['R'];
@@ -132,7 +132,7 @@ function OS_default_picture()
   global $template;
   $template->set_prefilter('picture', 'OS_default_prefilter_picture');
 }
-function OS_default_prefilter_picture($content, &$smarty)
+function OS_default_prefilter_picture($content)
 {
   global $pattern;
   $r=$pattern['OS_default_prefilter_picture']['R'];

@@ -1,4 +1,6 @@
 <?php
+$pattern['return']=true;
+
 $pattern['OS_default']=array(
  array('loc_end_index', 'index', 'OS_default_prefilter_index'),
  array('loc_begin_picture', 'picture', 'OS_default_prefilter_picture'),
